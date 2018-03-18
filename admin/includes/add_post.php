@@ -12,10 +12,17 @@ if(isset($_POST['create_post'])) {
     
     $post_tags = $_POST['post_tags'];
     $post_content = $_POST['post_content'];
-    $post_comment_count = 1;
+    $post_comment_count = 0;
     $post_date = date('y-m-d');
     
     move_uploaded_file($post_image_tmp, "../images/$post_image");
+    
+    $query = "INSERT INTO posts(post_category_id, post_title, post_author, post_date, post_image, post_content, post_tags, post_comment_count, post_status) ";
+    $query .="VALUES({$post_category_id}, '{$post_title}', '{$post_author}', now(), '{$post_image}', '{$post_content}', '{$post_tags}', '{$post_comment_count}', '{$post_status}')";
+
+    $create_post_query = mysqli_query($connection, $query);
+
+    confirmQuery($create_post_query);
 }
 
 ?>
@@ -33,12 +40,11 @@ if(isset($_POST['create_post'])) {
 
     <div class="form-group">
         <label for="post_category">Category</label>
-        <select name="post_category_id" id="">
-           
-
-           
-        
+        <input type="text" class="form-control" name="post_category_id">
+<!--
+        <select name="post_category_id" id="3">
        </select>
+-->
 
     </div>
 
