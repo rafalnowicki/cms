@@ -6,12 +6,16 @@ if(isset($_POST['create_post'])) {
     $post_title = $_POST['post_title'];
     $post_author = $_POST['post_author'];
     $post_status = $_POST['post_status'];
+    
     $post_image = $_FILES['image']['name'];
     $post_image_tmp = $_FILES['image']['tmp_name'];
+    
     $post_tags = $_POST['post_tags'];
     $post_content = $_POST['post_content'];
-    $post_comment_count = 4;
+    $post_comment_count = 1;
     $post_date = date('y-m-d');
+    
+    move_uploaded_file($post_image_tmp, "../images/$post_image");
 }
 
 ?>
