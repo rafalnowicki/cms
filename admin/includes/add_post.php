@@ -1,14 +1,35 @@
+<?php
+
+if(isset($_POST['create_post'])) {
+    
+    $post_category_id = $_POST['post_category_id'];
+    $post_title = $_POST['post_title'];
+    $post_author = $_POST['post_author'];
+    $post_status = $_POST['post_status'];
+    $post_image = $_FILES['image']['name'];
+    $post_image_tmp = $_FILES['image']['tmp_name'];
+    $post_tags = $_POST['post_tags'];
+    $post_content = $_POST['post_content'];
+    $post_comment_count = 4;
+    $post_date = date('y-m-d');
+}
+
+?>
+
+
+
+
 <form action="" method="post" enctype="multipart/form-data">
 
 
     <div class="form-group">
         <label for="title">Post Title</label>
-        <input type="text" class="form-control" name="title">
+        <input type="text" class="form-control" name="post_title">
     </div>
 
     <div class="form-group">
-        <label for="category">Category</label>
-        <select name="post_category" id="">
+        <label for="post_category">Category</label>
+        <select name="post_category_id" id="">
            
 
            
@@ -18,24 +39,22 @@
     </div>
 
 
+<!--
     <div class="form-group">
         <label for="users">Users</label>
         <select name="post_user" id="">
-           
-
-        
        </select>
-
     </div>
+-->
 
 
 
 
 
-    <!-- <div class="form-group">
+     <div class="form-group">
          <label for="title">Post Author</label>
-          <input type="text" class="form-control" name="author">
-      </div> -->
+          <input type="text" class="form-control" name="post_author">
+      </div> 
 
 
 
