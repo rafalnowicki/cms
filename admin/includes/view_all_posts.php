@@ -10,6 +10,7 @@
             <th>Tags</th>
             <th>Comments</th>
             <th>Date</th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -39,6 +40,7 @@
         echo "<td>$post_tags</td>";
         echo "<td>$post_comment_count</td>";
         echo "<td>$post_date</td>";
+        echo "<td><a href='includes/view_all_posts.php?delete={$post_id}'>Delete</a></td>";
         echo "</tr>";
 
 
@@ -46,3 +48,14 @@
 ?>
     </tbody>
 </table>
+
+
+
+
+<?php
+if(isset($_GET['delete'])) {
+    
+    echo "Hello !";
+}
+
+?>
