@@ -29,8 +29,8 @@ switch($source) {
         case 'add_post';
         include "includes/add_post.php";
         break;
-        case 'add_post2';
-        include "includes/add_post2.php";
+        case 'edit_post';
+        include "includes/edit_post.php";
         break;
         
     default:
