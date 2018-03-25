@@ -54,33 +54,17 @@ if(isset($_POST['update_post'])) {
     $update_post = mysqli_query($connection, $query);
     confirmQuery($update_post);
 }
-
-
-
-
-
-
-
 ?>
 
-
-
-
-
-
 <form action="" method="post" enctype="multipart/form-data">
-
     <div class="form-group">
         <label for="title">Post Title</label>
         <input value="<?php echo $post_title; ?>" type="text" class="form-control" name="post_title">
     </div>
 
     <div class="form-group">
-
-   <select name="post_category" id="">
-   
+    <select name="post_category" id="">
     <?php
-        
     $query = "SELECT * FROM categories";
     $select_categories = mysqli_query($connection, $query);
     confirmQuery($select_categories);
@@ -88,35 +72,34 @@ if(isset($_POST['update_post'])) {
     while($row = mysqli_fetch_assoc($select_categories)) {
         $cat_id = $row['cat_id'];
         $cat_title = $row['cat_title'];
-    
+
     echo "<option value='$cat_id'>{$cat_title}</option>";
-    
     }
     ?>
-    
-   </select>
+    </select>
     </div>
+
     <div class="form-group">
-         <label for="title">Post Author</label>
-          <input value="<?php echo $post_author; ?>" type="text" class="form-control" name="post_author">
-    </div> 
+        <label for="title">Post Author</label>
+        <input value="<?php echo $post_author; ?>" type="text" class="form-control" name="post_author">
+    </div>
 
     <div class="form-group">
         <select name="post_status" id="">
-             <option value="draft">Post Status</option>
-             <option value="published">Published</option>
-             <option value="draft">Draft</option>
-         </select>
+         <option value="draft">Post Status</option>
+         <option value="published">Published</option>
+         <option value="draft">Draft</option>
+     </select>
     </div>
 
     <div class="form-group">
         <img width="100" src="../images/<?php echo $post_image; ?>" alt="">
-        <input  type="file" name="image">
+        <input type="file" name="image">
     </div>
 
     <div class="form-group">
         <label for="post_tags">Post Tags</label>
-        <input value="<?php echo $post_tags; ?>"  type="text" class="form-control" name="post_tags">
+        <input value="<?php echo $post_tags; ?>" type="text" class="form-control" name="post_tags">
     </div>
 
     <div class="form-group">
@@ -127,6 +110,4 @@ if(isset($_POST['update_post'])) {
     <div class="form-group">
         <input class="btn btn-primary" type="submit" name="update_post" value="Update Post">
     </div>
-
-
 </form>
