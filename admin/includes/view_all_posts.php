@@ -29,6 +29,10 @@
         $post_image = $row['post_image'];
         $post_tags = $row['post_tags'];
         $post_comment_count = $row['post_comment_count'];
+        
+        $query = mysqli_query($connection, "SELECT * FROM comments WHERE comment_post_id = $post_id");
+        $post_comment_count = mysqli_num_rows($query);
+        
         $post_date = $row['post_date'];
 
         echo "<tr>";
@@ -42,26 +46,19 @@
         while($row = mysqli_fetch_assoc($edit_categories)) {
             $cat_id = $row['cat_id'];
             $cat_title = $row['cat_title'];
-        
-        
-        
-        echo "<td>{$cat_title}</td>";
-        
+            echo "<td>{$cat_title}</td>";
         }
-        
-        
-        
-        
+
         echo "<td>$post_status</td>";
         echo "<td><img width='100' src='../images/$post_image' alt='image'></td>";
         echo "<td>$post_tags</td>";
+        
         echo "<td>$post_comment_count</td>";
+
         echo "<td>$post_date</td>";
         echo "<td><a href='posts.php?source=edit_post&p_id={$post_id}'>Edit</a></td>";
         echo "<td><a href='posts.php?delete={$post_id}'>Delete</a></td>";
         echo "</tr>";
-
-
     }
 ?>
     </tbody>
