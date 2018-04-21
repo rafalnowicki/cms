@@ -7,7 +7,6 @@
             <th>Lastname</th>
             <th>Email</th>
             <th>Role</th>
-            <th>Date</th>
 <!--
             <th>Approve</th>
             <th>Unapprove</th>
@@ -64,7 +63,6 @@
 //            echo "<td><a href='../post.php?p_id=$post_id'>$post_title</a></td>";
 //        }
         
-        echo "<td></td>";
         echo "<td><a href='comments.php?approve='>Approve</a></td>";
         echo "<td><a href='comments.php?unapprove='>Unapprove</a></td>";
         echo "<td><a href='comments.php?delete='>Delete</a></td>";

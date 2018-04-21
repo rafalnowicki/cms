@@ -25,19 +25,15 @@ if(isset($_GET['source'])) {
 }
 
 switch($source) {
-        
         case 'add_post';
         include "includes/add_post.php";
         break;
-        case 'edit_post';
+        case 'edit_user';
         include "includes/edit_post.php";
         break;
-        
     default:
         include "includes/view_all_posts.php";
-    
     break;
-        
 }
 
 ?>
