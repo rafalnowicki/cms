@@ -15,12 +15,12 @@ if(isset($_POST['create_user'])) {
     
 //    move_uploaded_file($post_image_tmp, "../images/$post_image");
 //    
-//    $query = "INSERT INTO users(user_firstname, user_lastname, user_role, username, user_email, user_password) ";
-//    $query .="VALUES({$user_firstname}, '{$user_lastname}', '{$user_role}', '{$username}', '{$user_email}', '{$user_password}')";
-//
-//    $create_post_query = mysqli_query($connection, $query);
-//
-//    confirmQuery($create_post_query);
+    $query = "INSERT INTO users(username, user_password, user_firstname, user_lastname, user_email, user_role) ";
+    $query .="VALUES('{$username}', '{$user_password}', '{$user_firstname}', '{$user_lastname}', '{$user_email}', '{$user_role}')";
+
+    $create_user_query = mysqli_query($connection, $query);
+
+    confirmQuery($create_user_query);
 }
 
 ?>
